@@ -1,0 +1,12 @@
+.btn-feedback { font-size: 0; line-height: 0; text-indent: -4000px; width: 45px; height: 201px; display: block; position: fixed; bottom: 20px; right: 0; background: url(../images/btn-feedback.png) no-repeat 0 0; z-index: 10; }
+.mobile-buttons { display: none; text-align: center; }
+.mobile-buttons p { display: inline-block; margin: 0 6px; }
+.mobile-buttons .button { background-color: #62929e; display: table; width: 136px; height: 60px; text-align: center; color: #fff; font-size: 15px; border-radius: 4px; }
+.mobile-buttons .button span { display: table-cell; vertical-align: middle; }
+
+.uv-bottom-right {display: none}
+@media (max-width: 767px) {
+    .btn-feedback { display: none; }
+    .mobile-buttons { display: block; margin: 27px 0 58px; }
+    .uv-bottom-right { display: block }
+}

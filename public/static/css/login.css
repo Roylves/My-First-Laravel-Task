@@ -1,0 +1,212 @@
+body {
+	background: url("../images/back_1600.png") no-repeat top center fixed;
+	background-size: cover;
+
+	font-family: 'Open Sans', sans-serif;
+}
+
+nav.navbar-header {
+	background-color: transparent;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	height: 64px;
+	width: 100%;
+}
+
+nav.navbar > div.container {
+	padding-top: 25px;
+	padding-left: 10%;
+}
+
+.brand-second {
+	font-family: Lato-Regular;
+	font-size: 14px;
+	color: #FFFFFF;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+	left: -3px;
+}
+
+#login-form {
+    padding-bottom: 20px;
+    padding-left: 15%;
+    padding-right: 15%;
+    background-color: #FFFFFF;
+}
+
+form input[type=text], input[type=email], input[type=password], input#tags, select.form-control {
+	margin-bottom: 0px;
+
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+
+	height: 38px;
+
+	text-indent: 10px;
+}
+
+#login-form button,
+#form-changepassword button {
+	height: 38px;
+}
+
+#login-form p{
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#login-form div.form-group {
+	padding-top: 45px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+}
+
+#login-form div.form-group > div {
+	padding-left: 0px;
+}
+
+p#form-Title {
+	font-weight:600;
+	font-size: 28px;
+	color: #384343;
+
+}
+
+#login-form div.form-group.fg-password,
+#login-form div.form-group.fg-result,
+#login-form div.form-group.fg-contact-number {
+	padding-top: 15px;
+	margin-bottom: 0px;
+}
+
+#login-form div.fg-locations {
+	padding-top: 15px;
+	margin-bottom: 0px;
+}
+
+.leader-container {
+    left: 0;
+    position: absolute;
+    right: 30px;
+
+    text-align: left;
+}
+
+button.btn.btn-default.dropdown-toggle{
+    float: right;
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+
+span.glyphicon.glyphicon-user {
+	position: absolute;
+	height: 38px;
+	width: 30px;
+
+	padding-top: 10px;
+	padding-bottom: 14px;
+	padding-left: 10px;
+
+	z-index: 2;
+}
+
+div.inputWrapper {
+	position: absolute;
+
+	left: 0px;
+	right: 46px;
+
+	padding-right: 0px;
+
+}
+
+.custom-combobox-toggle {
+	width: 30px;
+	height: 38px;
+	float: right;
+	box-sizing: border-box;
+}
+
+btn.custom-combobox-input {
+	position: absolute;
+
+	left: 0px;
+	right: 30px;
+
+
+	height: 38px;
+	text-align: left;
+	text-indent: 20px;
+
+	z-index: 1;
+}
+
+div.tokenfield.form-control {
+    padding-top: 9px;
+}
+
+.error_message {
+    color: red;
+}
+.success_message {
+		color: green;
+}
+#btnCreateAccount {
+	background-color: #46B1C8;
+}
+
+.jumbotron-footer {
+	margin-top: 60px;
+	text-align: center;
+}
+
+.brand a {
+    color: white;
+}
+
+.row-sign-in {
+    margin-top: 15px;
+}
+
+.jvFloat .placeHolder {
+    color: #999;
+}
+
+.jvFloat .placeHolder.required {
+    color: gray;
+}
+
+.join-team {
+	padding: 13px 0;
+	position: relative;
+	bottom: -22px;
+}
+
+#login-form .join-team .form-group {
+	padding-top: 0;
+}
+
+.join-icon {
+	float: left;
+	margin-right: 10px;
+}
+
+.join-team_text {
+	color: #727171;
+	font-size: 14px;
+	font-weight: normal;
+	position: relative;
+	top: -3px;
+}
+
+.join-team_text span {
+	font-size: 17px;
+	font-weight: 600;
+}
