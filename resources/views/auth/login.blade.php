@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 
-
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <!-- Mirrored from kakitangan.com/login by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2017 10:36:45 GMT -->
@@ -72,30 +70,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       <form class="form-horizontal" role="form" action="{{ route('login') }}" method="post" id="login-form">
                           {{ csrf_field() }}
 
-                          <div class="form-group">
+                          <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
                               <div class="col-sm-12">
                                   <p id="form-Title">Log in</p>
 
-                                
+                                  @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                  @endif
                             </div>
                         </div>
 
-                          <div class="form-group row">
+                          <div class="form-group" style="padding-top:1em">
                               <div class="col-sm-12">
-                                <input name="email" type="email" class="form-control" placeholder="Email" required autofocus/>
+                                <input name="email" type="email" class="form-control" placeholder="Your Email" required autofocus/>
+
                               </div>
                           </div>
 
-                          <div class="form-group fg-password row">
+                          <div class="form-group fg-password">
                               <div class="col-sm-12">
                                     <input name="password" type="password"
-                                       class="form-control" placeholder="Password" required autofocus />
+                                       class="form-control" placeholder="Your Password" required autofocus />
+
                               </div>
                           </div>
 
                           <div class="form-group fg-password row">
                               <div class="col-sm-12">
-                                    <a href="password_forget.html">Forgot your password?</a>
+                                    <a href="{{ route('password.request') }}">Forgot your password?</a>
                               </div>
                           </div>
 
@@ -108,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                           </div>
 
                           <div class="fg-signup">
-                              <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+                              <p>Don't have an account? <a href="{{ url('signup') }}">Register</a></p>
                           </div>
                           <input type="hidden" name="next" value="/redirect" />
 

@@ -1,5 +1,10 @@
 <?php
 
+//add use of any file that relevant to content up here
+use App\Role;
+use App\User;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,12 +21,19 @@ Route::get('/', function () {
     return view('kkt');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
+//Here example of content function to aid for current function that dont have view
+Route::get('/signup', function () {
+	$roles = Role::all();
+    return view('auth.signup',compact('roles'));
 });
 
-Route::get('/signup', function () {
-    return view('auth.signup');
+Route::get('/signup2', function () {
+	$roles = Role::all();
+    return view('kkt.kakitangan.signup',compact('roles'));
+});
+
+Route::get('/register2', function () {
+    return view('auth.registerOri');
 });
 
 Route::get('/about', function () {
@@ -36,8 +48,8 @@ Route::get('/leave/calendar', function () {
     return view('kkt.kakitangan.leave.calendar');
 });
 
-Route::get('/employees', function () {
-    return view('kkt.kakitangan.testemploy');
+Route::get('/dashboard', function () {
+    return view('layouts.kktinner');
 });
 
 Auth::routes();
@@ -60,3 +72,14 @@ Route::get('/postDelete/{id}', 'CrudController@postDelete');
 //post for pass data, get for create/destroy data
 // Use {} to declare an id
 Route::get('/getUser/{id}', 'UserController@getUser');
+
+//----//
+Route::get('manage-item-ajax', 'ItemAjaxController@manageItemAjax');
+Route::resource('item-ajax', 'ItemAjaxController');
+
+//--Crud Ajax--//
+Route::get('/employees', 'CrudAjaxController@index');
+Route::post('/create', 'CrudAjaxController@create');
+Route::get('/edit/{user_id?}', 'CrudAjaxController@edit');
+Route::put('/update/{user_id?}', 'CrudAjaxController@update');
+Route::delete('/delete/{user_id?}', 'CrudAjaxController@delete');

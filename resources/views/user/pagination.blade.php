@@ -45,13 +45,14 @@ li.disabled span {
 }
 /*Pagination End*/
 html, body {
-    width: 30em;
+    width: 60em;
     margin: 0 auto;
+    margin-left: 10em;
 }
 table {
     border-collapse: collapse;
     text-align: center;
-    width:30em;
+    width:40em;
     font-size: 1.3em;
 }
 table tr>td, tr>th {
@@ -80,25 +81,27 @@ table tr>td, tr>th {
         <table>
             <tr>
                 <th>No</th>
+                <th>Role</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Role</th>
+                <th>Contact Number</th>
                 <th>Actions</th>
             </tr>
 
             @foreach ($users as $key => $u)
             <tr>
                 <td> {{ $key + $users->firstItem() }}</td> <!-- first item to let number user auto increment -->
+                <td> {{ $u->rolename }} </td>
                 <td> {{ $u->name }} </td>
                 <td> {{ $u->email }} </td>
-                <td> {{ $u->rolename }} </td>
+                <td> {{ $u->contact_number }} </td>
                 <td class="small"><a href="{{ url('getUpdate',array($u->id)) }}">Update</a> | <a href="{{ url('postDelete',[$u->id]) }}" onclick="return confirm('Confirm DELETE employee {{ $u->name }} ?')">Delete</a></td>
             </tr>
             <!-- rolename is taking from UserController that already assign roles.name at database as rolename -->
             @endforeach
         </table>
         <p class="psize">{{ $users->lastItem() }} / {{ $users->total() }} items</p>
-        <hr style="margin: 0em; width:40em">
+        <hr style="margin: 0em; width:50em">
         <p>{{ $users->links() }} &nbsp; pages </p>
 </body>
 </html>

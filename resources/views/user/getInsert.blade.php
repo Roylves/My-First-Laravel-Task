@@ -17,72 +17,86 @@
 
 <style>
 html, body {
-	width:600px;
-	margin: 0 auto;
-	padding: 10px;
+    width:600px;
+    margin: 0 auto;
+    padding: 10px;
 }
 .container{
-	background: #ddd;
-	box-shadow: 0px 0px 10px grey;
-	padding: 10px;
+    background: #ddd;
+    box-shadow: 0px 0px 10px grey;
+    padding: 10px;
 }
 </style>
 
 </head>
 <body>
-		<div class="container">
-		<h1>New users</h1>
-		<hr>
-			<form method="POST" action="{{ url('postInsert') }}">
-              			{{ csrf_field() }}				
+        <div class="container">
+        <h1>New users</h1>
+        <hr>
+            <form method="POST" action="{{ url('postInsert') }}">
+                        {{ csrf_field() }}              
               <table>
-					<tr>
-						<td>Name</td>
-						<td>
-							<input name="name" id="name" type="text" placeholder="Your Name" required />
-						</td>
-					</tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>
+                            <input name="name" id="name" type="text" placeholder="Your Name"  />
+                        </td>
+                    </tr>
 
-					<tr>
-						<td>Email</td>
-						<td>
-							<input name="email" id="email" type="email" placeholder="Your Email" required />
-						</td>
-					</tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>
+                            <input name="email" id="email" type="email" placeholder="Your Email"  />
+                        </td>
+                    </tr>
 
-					<tr>
-						<td>Password</td>
-						<td>
-							<input name="password" id="password" type="password" placeholder="Create password" required />
-						</td>
-					</tr>
+                    <tr>
+                        <td>Company Name</td>
+                        <td>
+                            <input name="company_name" id="company_name" type="text" placeholder="Your Email"  />
+                        </td>
+                    </tr>
 
-					<tr>
-						<td>Password Confirmation</td>
-						<td>
-							<input name="password_confirmation" id="password-confirm" type="password" placeholder="Confirm password" data-validation-matches-match="password" />
-						</td>
-					</tr>
+                    <tr>
+                        <td>Contact Number</td>
+                        <td>
+                            <input name="contact_number" id="contact_number" type="text" placeholder="Your Email"  />
+                        </td>
+                    </tr>
 
-					<tr>
-						<td>Role</td>
-						<td>
-							<select name="role_id" id="role_id">
-							@foreach($roles as $role)
-								<option value="{{ $role->id }}">
-									{{ $role->name }}
-								</option>
-							@endforeach
-							</select>
-						</td>
-					</tr>
-				</table>
+                    <tr>
+                        <td>Password</td>
+                        <td>
+                            <input name="password" id="password" type="password" placeholder="Create password"  />
+                        </td>
+                    </tr>
 
-						<hr>
-						<button type="submit" class="btn btn-primary">
+                    <tr>
+                        <td>Password Confirmation</td>
+                        <td>
+                            <input name="password_confirmation" id="password-confirm" type="password" placeholder="Confirm password" data-validation-matches-match="password" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Role</td>
+                        <td>
+                            <select name="role_id" id="role_id">
+                            @foreach($roles as $role)
+                                <option value="{{ $role->id }}">
+                                    {{ $role->name }}
+                                </option>
+                            @endforeach
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+
+                        <hr>
+                        <button type="submit" class="btn btn-primary">
                                     Register
                         </button>
-			</form>
-		</div>
+            </form>
+        </div>
 </body>
 </html>

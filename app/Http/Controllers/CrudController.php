@@ -14,11 +14,14 @@ class CrudController extends Controller
     	return view('user.getInsert',compact('roles'));
     }
 
+    //Act as store /save file created
     public function postInsert(Request $r)
     {
     	User::insert(['name'=>$r->name,
     				  'email'=>$r->email,
     				  'password'=>$r->password,
+                      'company_name'=>$r->company_name,
+                      'contact_number'=>$r->contact_number,
     				  'role_id'=>$r->role_id]);
     	return redirect('pagination'); //redirect = refer to the url at route/web.php
 

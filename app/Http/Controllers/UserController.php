@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // use DB;
-use App\user;
-use App\role;
+use App\User;
+use App\Role;
 
 class UserController extends Controller
 {

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <!-- Mirrored from kakitangan.com/signup by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2017 10:36:48 GMT -->
@@ -9,27 +12,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Kakitangan.com | Sign up </title>
 
-    <link href="/static/js/jquery-ui-1.11.3/jquery-ui.min.css"  rel="stylesheet">
-    <link href="/static/css/bs/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/bootstrapValidator.min.css" rel="stylesheet">
-    <link href="/static/css/bootstrap-tokenfield.min.css" rel="stylesheet">
-    <link href="/static/css/bootstrap-select.min.css" rel="stylesheet">
-    <link href="/static/css/bootstrap-dialog.min.css" rel="stylesheet">
-    <link href="/static/css/jvfloat.css" rel="stylesheet">
-    <link href="/static/css/common.css" rel="stylesheet">
-    <link href="/static/css/login.css" rel="stylesheet">
+    <link href="static/js/jquery-ui-1.11.3/jquery-ui.min.css"  rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="static/css/bootstrapValidator.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap-tokenfield.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap-dialog.min.css" rel="stylesheet">
+    <link href="static/css/jvfloat.css" rel="stylesheet">
+    <link href="static/css/common.css" rel="stylesheet">
+    <link href="static/css/login.css" rel="stylesheet">
 
-    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico"/>
 
     
-<link rel="stylesheet" href="/static/css/tokenfield-typeahead.css" />
-    <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
-    </script>
+<link rel="stylesheet" href="static/css/tokenfield-typeahead.css" />
 <style>
-  .panel-default { margin-top: 0px; margin-bottom: 0px;}
+  .panel-default { margin-top: 40px; margin-bottom: 0px;}
 
   .location-category {
     margin: 0 20px 5px 20px;
@@ -42,18 +40,41 @@
     min-width: 180px;
     overflow-y: auto;
   }
+
+  div.maybank-interests {
+      background-color: #FFC900;
+      margin-top: 10px;
+  }
+
+  div.maybank-interests a {
+      color: #FFFFFF;
+  }
+
+  div.maybank-interests img {
+    padding-top: 10px;
+  }
 </style>
 
 </head>
 <body>
+  <!-- Google Tag Manager -->
+<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-KF6MFZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KF6MFZ');</script>
+<!-- End Google Tag Manager -->
+
 
   <div class="container-fluid">
     <nav class="navbar navbar-header">
       <div class="container">
-        <a class="brand navbar-left" href="/">
+        <a class="brand navbar-left" href="index.html">
           <span class="brand-second">
-	    KAKITANGAN.COM
-	  </span>
+      KAKITANGAN.COM
+    </span>
         </a>
       </div>
     </nav>
@@ -63,21 +84,18 @@
   <div class="row">
     <div class="col-md-offset-3 col-md-6">
       <div class="panel panel-default">
-	      <div class="panel-body">
-          <!-- <form class="form-horizontal" action="https://kakitangan.com/register" method="post" id="login-form">
-            <input type='hidden' name='csrfmiddlewaretoken' value='chebT4ra2L2eMBXJH7kHjARxZj4VrWSx' /> -->
+        <div class="panel-body">
+          <form class="form-horizontal" action="https://kakitangan.com/register" method="post" id="login-form">
+            <input type='hidden' name='csrfmiddlewaretoken' value='chebT4ra2L2eMBXJH7kHjARxZj4VrWSx' />
 
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}" id="login-form">
-              {{ csrf_field() }}
-
-            <div class="form-group" style="padding-top:0; text-align:center">
+            <div class="form-group">
               <p id="form-Title">Register company account</p>
             </div>
 
-            <div class="join-team" style="padding-left:2em">
+            <div class="join-team">
                 <div class="form-group">
                     <div class="join-icon">
-                        <img src="/static/images/svg/join-icon.svg" alt="join-icon">
+                        <img src="static/images/svg/join-icon.svg" alt="join-icon">
                     </div>
                     <div class="join-team_text">
                         <span>Joining the existing team?</span><br>
@@ -86,97 +104,58 @@
                 </div>
             </div>
 
-          <div class="form-group">
-            <div class="{{ $errors->has('name') ? ' has-error' : '' }}">
-
-                <div class="col-md-12">
-                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Your Name" required>
-
-                    @if ($errors->has('name'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('name') }}</strong>
-                        </span>
-                    @endif
-                </div>
-            </div>
-          </div>
-
-          <div class="form-group row" style="padding-top: 1.5em">
-            <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
-
-                  <div class="col-md-7">
-                      <!-- Use style inside input to adjust input width -->
-                      <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Your Email Address" required>
-
-                      @if ($errors->has('email'))
-                          <span class="help-block">
-                              <strong>{{ $errors->first('email') }}</strong>
-                          </span>
-                      @endif
-                  </div>
-              </div>
-
-              <div class="{{ $errors->has('contact_number') ? ' has-error' : '' }}">
-                  <div class="col-sm-5">
-                    <input name="contact_number" id="contact_number" type="text" class="form-control" value="{{ old('contact_number') }}" placeholder="Phone No." required >
-
-                      @if ($errors->has('contact_number'))
-                          <span class="help-block">
-                              <strong>{{ $errors->first('contact_number') }}</strong>
-                          </span>
-                      @endif
-                  </div>
-              </div>
-          </div>
-
-          <div class="form-group row" style="padding-top: 1.5em">
-            <div class="{{ $errors->has('company_name') ? ' has-error' : '' }}">
+            <div class="form-group row">
               <div class="col-sm-7">
-                <input name="company_name" id="company_name" type="text" class="form-control" value="{{ old('company_name') }}" placeholder="Company name" required >
-
-                      @if ($errors->has('company_name'))
-                          <span class="help-block">
-                              <strong>{{ $errors->first('company_name') }}</strong>
-                          </span>
-                      @endif
+                <input name="full_name" id="full_name" type="text" class="form-control" placeholder="Your Name" required />
+              </div>
+              <div class="col-sm-5">
+                <input name="contact_number" id="contact_number" type="text" class="form-control" placeholder="Phone No." />
               </div>
             </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <input name="email" id="email" type="email" class="form-control" placeholder="Email" required />
+              </div>
+            </div>
+
+            <div class="form-group fg-password row">
+              <div class="col-sm-6">
+                <input name="password" id="password" type="password" class="form-control"
+                       placeholder="Create password" required />
+              </div>
+              <div class="col-sm-6">
+                <input name="confirm_password" id="confirm_password" class="form-control"
+                       type="password" placeholder="Confirm password" data-validation-matches-match="password" />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-7">
+                <input name="company_name" id="company_name" type="text" class="form-control" placeholder="Company name" />
+              </div>
 
               <div class="col-sm-5">
                 <div class="ui-widget">
                   <span class="glyphicon glyphicon-user"></span>
-                  <select id="role_id" name="role_id" class="form-control selectpicker" required>
-                    <option value="" disabled selected style="display:none">Position</option>
-                    @foreach($roles as $role)
-                    <option value="{{ $role->id }}">
-                              {{ $role->name }}
-                    </option>
-                    @endforeach
+                  <select id="company_size" name="company_size" class="form-control selectpicker" required>
+                    <option selected>&lt;10</option>
+                    <option>11-20</option>
+                    <option>21-30</option>
+                    <option>31-40</option>
+                    <option>41-50</option>
+                    <option>51-60</option>
+                    <option>61-70</option>
+                    <option>71-80</option>
+                    <option>81-90</option>
+                    <option>91-100</option>
+                    <option>101-200</option>
+                    <option>200+</option>
                   </select>
                 </div>
               </div>
-          </div>
-
-          <div class="form-group row" style="padding-top: 1.5em">
-            <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
-
-                <div class="col-md-6">
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
-
-                    @if ($errors->has('password'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('password') }}</strong>
-                        </span>
-                    @endif
-                </div>
             </div>
 
-            <div class="col-md-6">
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation" required>
-            </div>
-          </div>
-
-<!--        <div class="form-group fg-locations row">
+            <div class="form-group fg-locations row">
               <div class="col-sm-12">
                 <input type="text" class="form-control" id="locations" name="locations" placeholder="Select office locations" autocomplete="off"/>
               </div>
@@ -191,47 +170,65 @@
                 <input id="agreement" type="checkbox" name="agreement" required>
                 <span>I have read and agree to the <a href="landing/terms.html" target="_blank">Term & Privacy Policy</a></span>
               </div>
-            </div> -->
+            </div>
 
             <div class="form-group">
               <div class="row">
                 <div  class="col-sm-offset-3 col-sm-6">
                   <button id="btnCreateAccount" type="submit" class="btn btn-primary form-control">
-		                Create account
-		              </button>
+                    Create account
+                  </button>
                 </div>
               </div>
               <div class="row row-sign-in">
                 <div class="col-sm-12 text-center">
-                  <p>I already have an account. <a href="/login">Sign in</a></p>
+                  <p>I already have an account. <a href="login.html">Sign in</a></p>
                 </div>
               </div>
             </div>
 
             <input type="hidden" name="campaign_id" value="" />
           </form>
-	      </div>
+        </div>
+      </div>
+      <div class="panel maybank-interests">
+          <div class="panel-body">
+              <div class="row">
+                  <div class="col-md-5 text-center">
+                      <img src="static/images/maybank.png" style="margin-top: 7px;"/>
+                  </div>
+                  <div class="col-md-7">
+                      <input id="maybank_interests" type="checkbox" name="maybank_interests" />
+                      <span><strong>Register your interest for <a href="static/maybank/maybank2u%20Biz_rev2.pdf" target="_blank">Maybank2u Biz</a>
+                          and <a href="static/maybank/maybankAutoCredit_rev2.pdf" target="_blank">Maybank AutoCredit</a>, an online banking service and e-payment solution for SME Customers!</strong></span>
+                  </div>
+              </div>
+          </div>
       </div>
     </div>
   </div>
 </div>
 
+
+    <nav class="navbar jumbotron-footer">
+      <a href="landing/terms.html">Privacy &#38; Terms</a>
+    </nav>
   </div>
 </body>
 
-<script src="/static/js/jquery-1.11.2.min.js"></script>
-<script src="/static/js/jquery-ui-1.11.3/jquery-ui.min.js"></script>
-<script src="/static/css/bs/js/bootstrap.min.js"></script>
-<script src="/static/js/bootstrapValidator.min.js"></script>
-<script src="/static/js/bootstrap-tokenfield.min.js"></script>
-<script src="/static/js/bootstrap-select.min.js"></script>
-<script src="/static/js/bootstrap-dialog.min.js"></script>
-<script src="/static/js/jvfloat.min.js"></script>
-<!-- <script src="/static/js/uservoice.js"></script> -->
+<script src="static/js/jquery-1.11.2.min.js"></script>
+<!-- <script src="static/js/jquery-ui-1.11.3/jquery-ui.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="static/js/bootstrapValidator.min.js"></script>
+<script src="static/js/bootstrap-tokenfield.min.js"></script>
+<script src="static/js/bootstrap-select.min.js"></script>
+<script src="static/js/bootstrap-dialog.min.js"></script>
+<script src="static/js/jvfloat.min.js"></script>
+<script src="static/js/uservoice.js"></script>
 
 
-<script type="text/javascript" src="/static/js/typeahead.bundle.min.js"></script>
-<!-- <script src='//www.google.com/recaptcha/api.js'></script>
+<script type="text/javascript" src="static/js/typeahead.bundle.min.js"></script>
+<script src='../www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript">
   var my_location_engine = new Bloodhound({
     local: [
@@ -340,7 +337,7 @@
        validating: 'glyphicon glyphicon-refresh'
      },
      fields: {
-       name: {
+       full_name: {
          validators: {
            notEmpty: {
              message: 'Your name cannot be empty'
@@ -477,7 +474,7 @@
   /* DO NOT EDIT BELOW THIS LINE */
   f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('http://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
 </script>
-<!-- End Visual Website Optimizer Asynchronous Code --> -->
+<!-- End Visual Website Optimizer Asynchronous Code -->
 
 
 
