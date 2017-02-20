@@ -11,12 +11,10 @@ $(document).ready(function () {
         var user_id = $(this).val();
         $.get('edit/' + user_id, function (data) {  //use edit url
             $('#user_id').val(data.id);
+            $('#role_id').val(data.role_id);
             $('#name').val(data.name);
             $('#email').val(data.email);
-            $('#company_name').val(data.company_name);
             $('#contact_number').val(data.contact_number);
-            $('#role_id').val(data.role_id);
-            $('#password').val(data.password);
             $('#btn-save').val("update");
             $('#linkEditorModal').modal('show');
         })
@@ -32,12 +30,10 @@ $(document).ready(function () {
         });
         e.preventDefault();
         var formData = {
+            role_id: $('#role_id').val(),
             name: $('#name').val(),
             email: $('#email').val(),
-            company_name: $('#company_name').val(),
             contact_number: $('#contact_number').val(),
-            role_id: $('#role_id').val(),
-            password: $('#password').val(),
         };
         var state = $('#btn-save').val();
         var type = "POST";
@@ -53,7 +49,7 @@ $(document).ready(function () {
             data: formData,
             dataType: 'json',
             success: function (data) {
-                var user = '<tr id="user' + data.id + '"><td>' + data.firstItem + '</td><td>' + data.name + '</td><td>' + data.email + '</td><td>' + data.company_name + '</td><td>' + data.contact_number + '</td><td>' + data.role_id + '</td><td>' + data.password + '</td>';
+                var user = '<tr id="user' + data.id + '"><td>' + data.id + '</td><td>' + data.role_id + '</td><td>' + data.name + '</td><td>' + data.email + '</td><td>' + data.contact_number + '</td>';
                 user += '<td><button class="btn btn-info open-modal" value="' + data.id + '">Edit</button> ';
                 user += '<button class="btn btn-danger delete-link" value="' + data.id + '">Delete</button></td></tr>';
                 if (state == "add") {

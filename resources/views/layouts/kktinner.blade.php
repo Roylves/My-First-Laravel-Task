@@ -10,9 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>
-    First time | Dashboard
-</title>
+    <title>Dashboard | Kakitangan</title>
 
     <link href='//fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'/>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700'

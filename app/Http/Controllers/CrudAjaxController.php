@@ -40,12 +40,10 @@ class CrudAjaxController extends Controller
 	public function update(Request $r)
 	{
 	    $user = User::find($r->user_id);
+	    $user->role_id = $r->role_id;
     	$user->name = $r->name;
     	$user->email = $r->email;
-    	$user->company_name = $r->company_name;
     	$user->contact_number = $r->contact_number;
-    	$user->role_id = $r->role_id;
-    	$user->password = $r->password;
     	$user->save();
     	return \Response::json($user);
 	}
