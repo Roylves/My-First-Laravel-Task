@@ -83,3 +83,10 @@ Route::post('/create', 'CrudAjaxController@create');
 Route::get('/edit/{user_id?}', 'CrudAjaxController@edit');
 Route::put('/update/{user_id?}', 'CrudAjaxController@update');
 Route::delete('/delete/{user_id?}', 'CrudAjaxController@delete');
+
+Route::get('laravel-ajax-pagination',array('as'=>'ajax-pagination','uses'=>'FileController@productList'));
+
+Route::get('datatable','DatatablesController@getIndex');
+// uses of 'as=>' is important when want to use inside ajax 
+Route::get('datatable/getposts','DatatablesController@anyData');
+Route::resource('datatable2', 'DatatablesController');
