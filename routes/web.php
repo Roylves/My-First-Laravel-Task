@@ -89,4 +89,3 @@ Route::get('laravel-ajax-pagination',array('as'=>'ajax-pagination','uses'=>'File
 Route::get('datatable','DatatablesController@getIndex');
 // uses of 'as=>' is important when want to use inside ajax 
 Route::get('datatable/getposts','DatatablesController@anyData');
-Route::resource('datatable2', 'DatatablesController');

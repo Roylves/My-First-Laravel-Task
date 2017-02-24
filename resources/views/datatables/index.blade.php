@@ -48,46 +48,46 @@ thead tr th, tbody tr td {
 @push('scripts')
 <script>
 $(function() {
-    // var table = $('#users-table').DataTable({
-    //     // order: [0, 'asc'],  order number by ascending(asc)/descending(desc)
-    //     stateSave: true,
-    //     processing: true,
-    //     serverSide: true,
-    //     ajax: '{{url('datatable/getposts')}}',
-    //     type: 'POST',
-    //     columns: [
-    //         { data: 'rownum', name: 'rownum' },
-    //         { data: 'rolename', name: 'roles.name' },
-    //         { data: 'name', name: 'name' },
-    //         { data: 'email', name: 'email' },
-    //         { data: 'contact_number', name: 'contact_number' }
-    //         // {data: 'action', name: 'action', orderable: false, searchable: false}
-    //     ],
-    // });
-
-    ////----- Open the modal to CREATE a link -----////
+    //To display data inside datatable. Not related with CRUD
+    var table = $('#users-table').DataTable({
+        // order: [0, 'asc'],  order number by ascending(asc)/descending(desc)
+        processing: true,
+        serverSide: true,
+        ajax: '{{url('datatable/getposts')}}',
+        type: 'POST',
+        columns: [
+            { data: 'rownum', name: 'rownum' },
+            { data: 'rolename', name: 'roles.name' },
+            { data: 'name', name: 'name' },
+            { data: 'email', name: 'email' },
+            { data: 'contact_number', name: 'contact_number' },
+            // {data: 'action', name: 'action', orderable: false, searchable: false}
+            // {data: 'null', render: '<button>Edit</button>'},
+        ],
+    });
+    // ////----- Open the modal to CREATE a link -----////
     $('#btn-add').click(function () {
         $('#btn-save').val("add");
         $('#modalFormData').trigger("reset");
         $('#linkEditorModal').modal('show');
     });
-
-    // ////----- Open the modal to UPDATE a link -----////
-    // $('body').on('click', '.open-modal', function () {
-    //     var user_id = $(this).val();
-    //     $.get('edit/' + user_id, function (data) {  //use edit url
-    //         $('#user_id').val(data.id);
-    //         $('#role_id').val(data.role_id);
-    //         $('#name').val(data.name);
-    //         $('#email').val(data.email);
-    //         $('#contact_number').val(data.contact_number);
-    //         $('#btn-save').val("update");
-    //         $('#linkEditorModal').modal('show');
-    //     })
-    // });
-
+    //----- Open the modal to UPDATE a link -----////
+    $('body').on('click', '.open-modal', function () {
+        var user_id = $(this).val();
+        // $.get('edit/' + user_id, function (data) {  //use edit url
+        //     $('#user_id').val(data.id);
+        //     $('#role_id').val(data.role_id);
+        //     $('#name').val(data.name);
+        //     $('#email').val(data.email);
+        //     $('#contact_number').val(data.contact_number);
+        //     $('#btn-save').val("update");
+        //     $('#linkEditorModal').modal('show');
+        // })
+        alert(user_id);
+    });
     // Clicking the save button on the open modal for both CREATE and UPDATE
     // Save & delete need token
+    //Don't forget Base html header also need csrf_token
     $("#btn-save").click(function (e) {
         $.ajaxSetup({
             headers: {
@@ -96,7 +96,7 @@ $(function() {
         });
         e.preventDefault();
         var formData = {
-            role: $('#rolename').val(),
+            role_id: $('#role_id').val(),
             name: $('#name').val(),
             email: $('#email').val(),
             contact_number: $('#contact_number').val(),
@@ -114,30 +114,37 @@ $(function() {
             url: ajaxurl,
             data: formData,
             dataType: 'json',
-            success: function(data, textStatus, jqXHR)
-        {
-          var user = '<tr id="user' + data.id + '"><td>' + data.id + '</td><td>' + data.role_id + '</td><td>' + data.name + '</td><td>' + data.email + '</td><td>' + data.contact_number + '</td>';
-                user += '<td><button class="btn btn-info open-modal" value="' + data.id + '">Edit</button> ';
-                user += '<button class="btn btn-danger delete-link" value="' + data.id + '">Delete</button></td></tr>';
-              var table = $('#users-table').DataTable(); 
-              table.ajax.reload( null, false );
-              $('#rolename').val();
-            $('#name').val();
-            $('#email').val();
-            $('#contact_number').val();
-            if (state == "add") {
-                    $('#links-list').append(user);
-                } else {
-                    $("#user" + user_id).replaceWith(user);
-                }
-          $('#modalFormData').trigger("reset");
-          $('#linkEditorModal').modal('hide')
-        },
-        error: function(data)
-        {
-           console.log('Error:', data);
-        }
-      });
+            success: function (data) {
+                alert('success');
+                table.ajax.reload( null, false );
+                $('#modalFormData').trigger("reset");
+                $('#linkEditorModal').modal('hide')
+            },
+            error: function (data) {
+                console.log('Error:', data);
+            }
+        });
+    });
+    ////----- DELETE a link and remove from the page -----////
+    $('body').on('click', '.delete-link', function () {
+        var user_id = $(this).val();
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
+        // $.ajax({
+        //     type: "DELETE",
+        //     url: 'delete/' + user_id,  //use delete url
+        //     success: function (data) {
+        //         console.log(data);
+        //         $("#user" + user_id).remove();
+        //     },
+        //     error: function (data) {
+        //         console.log('Error:', data);
+        //     }
+        // });
+        alert(user_id);
     });
 });
 </script>
