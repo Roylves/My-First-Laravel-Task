@@ -58,8 +58,9 @@ class DatatablesController extends Controller
 
         return $datatable
             ->addColumn('action', function ($staff) {
-                return '<button class="btn btn-info open-modal" value="'.$staff->id.'"><i class="glyphicon glyphicon-edit"></i>Edit</button> &nbsp;
-                <button class="btn btn-danger delete-link" value="'.$staff->id.'">
+                return '<button class="btn btn-info open-modal" style="color: #fff; background-color: #5bc0de; border-color: #46b8da" value="'.$staff->id.'"><i class="glyphicon glyphicon-edit"></i>Edit</button>
+
+                    <button class="btn btn-danger delete-link" style="color: #fff; background-color: #d9534f; border-color: #d43f3a; margin-left:0.2em" value="'.$staff->id.'">
                     <i class="glyphicon glyphicon-remove"></i>Delete</button>';
             })
             ->make(true);
