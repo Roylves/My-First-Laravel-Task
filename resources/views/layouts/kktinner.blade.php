@@ -16,8 +16,10 @@
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700'
           rel='stylesheet' type='text/css'/>
 
-    <link href="/static/js/jquery-ui-1.11.3/jquery-ui.min.css" rel="stylesheet"/>
+    <link href="/static/css/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
     <link href="/static/css/style.css" rel="stylesheet" />
     <link href="/static/css/dashboard.css" rel="stylesheet"/>
     <link href="/static/css/bootstrap-dialog.min.css" rel="stylesheet"/>
@@ -27,64 +29,7 @@
  section:first-child {
    padding-top: 40px;
  }
- .ico-mail {
-   background: url("/static/images/ico-envelope.png") no-repeat 0 0;
-   width: 20px;
- }
- .alert.alert-support-contact {
-   background-color: #FFF5D3;
-   height: 80px;
-
-   padding-top: 12px;
-   padding-left: 20px;
- }
- .alert {
-   padding: 10px;
- }
- .alert img {
-   width: 46px;
-   height: 46px;
-   display: inline-block;
- }
- .alert .ico-envelope {
-   width: 20px;
-   height: 20px;
-   margin-bottom: 4px;
- }
- .alert .col-md-* {
-   padding: 0;
- }
- .alert span {
-   display: inline-block;
-   padding-top: 4px;
-   padding-left: 5px;
-   padding-right: 12px;
- }
- .alert .alert-info-text {
-   font-size: 14px;
-   color: #384343;
-   padding: 2px;
- }
- .alert .alert-info-text-bold {
-   font-weight: 600;
-   font-size: 16px;
-
-   color: #384343;
-   margin-top: 10px;
- }
- .alert .alert-contact-name {
-   font-weight: 600;
-   font-size: 16px;
-   color: #E18C44;
-
-   padding-top: 10px;
- }
- .alert a {
-   text-decoration: underline;
-
-   font-size: 13px;
-   color: #333333;
- }
+ 
  .form-set .form-group-modules .row {
    margin-top: 8px;
  }
@@ -253,16 +198,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       <!-- view_data.html will override this block because the js file order impacts the date control of table editor-->
       
-      <script type="text/javascript" src="/static/js/jquery-1.11.2.min.js"></script>
+      <script type="text/javascript" src="/static/css/bs/js/jquery-3.1.1.js"></script>
+      <script type="text/javascript" src="/static/css/bs/js/jquery-3.1.1.min.js"></script>
+      <!-- DataTables -->
+      <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+      @stack('scripts')
+      <!-- /Datatables -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="/static/js/isotope.pkgd.min.js" ></script>
       <script type="text/javascript" src="/static/js/bootstrap-datepicker.min.js"></script>
       <script type="text/javascript" src="/static/js/bootstrap-dialog.min.js"></script>
       <script type="text/javascript" src="/static/js/uservoice.js"></script>
 
-      <script type="text/javascript" src="/static/css/bs/js/jquery-3.1.1.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-      <script type="text/javascript" src="/js/laracrud.js"></script>
+      <!-- <script type="text/javascript" src="/js/laracrud.js"></script> -->
 
   </body>
 </html>

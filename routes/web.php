@@ -86,6 +86,11 @@ Route::delete('/delete/{user_id?}', 'CrudAjaxController@delete');
 
 Route::get('laravel-ajax-pagination',array('as'=>'ajax-pagination','uses'=>'FileController@productList'));
 
+// Datatable CRUD AJAX
 Route::get('datatable','DatatablesController@getIndex');
 // uses of 'as=>' is important when want to use inside ajax 
-Route::get('datatable/getposts','DatatablesController@anyData');
+Route::get('datatable/getIndexData','DatatablesController@getIndexData');
+Route::post('/creating', 'DatatablesController@create');
+Route::get('/editing/{user_id?}', 'DatatablesController@edit');
+Route::put('/updating/{user_id?}', 'DatatablesController@update');
+Route::delete('/remove/{user_id?}', 'DatatablesController@delete');

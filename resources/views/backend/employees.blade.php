@@ -157,6 +157,7 @@ table {
 
             @include('datatables.indexpop')
         </div>
+        </section>
     </div>
     </div>
 </div>

@@ -14,10 +14,13 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'users';
     protected $fillable = [
     //Add of role_id to customize default
         'name', 'email', 'contact_number', 'company_name', 'role_id', 'password', 
     ];
+    protected $primaryKey = 'id';
+    public    $timestamp = false;
 
     /**
      * The attributes that should be hidden for arrays.
@@ -27,4 +30,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo('App\Role');
+    }
 }
+// ok on

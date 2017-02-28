@@ -31,14 +31,15 @@
         </div>
 
         <!-- jQuery -->
-        <script src="http://code.jquery.com/jquery.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+        <script type="text/javascript" src="/static/css/bs/js/jquery-3.1.1.js"></script>
         <script type="text/javascript" src="/static/css/bs/js/jquery-3.1.1.min.js"></script>
         <!-- DataTables -->
-        <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
         <!-- Bootstrap JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- App scripts -->
-        <script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.jss"></script>
+        <script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
         @stack('scripts')
     </body>
 </html>
